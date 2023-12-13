@@ -56,10 +56,7 @@ export default function Collection({ params }: { params: { chain: Chain, address
       </h1>
       <Flex wrap="wrap" gap="2">
         {collection.map((o,i) => {
-          return <Card key={i} onClick={()=>{
-            router.push(`/collection/${params.chain}/${params.address}/token/${o.nft_data.token_id}`)
-
-          }}>
+          return <Card key={i}>
             <img src={o.nft_data.external_data.image_256}/>
           </Card>
         })}
