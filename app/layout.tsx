@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"
 import { ThemeProvider } from "@/components/theme-provider"
 import '@radix-ui/themes/styles.css';
-import { WalletProvider } from "@/lib/store";
+import { NftProvider } from "@/lib/store";
 import { Toaster } from "@/components/ui/toaster";
 
 interface RootLayoutProps {
@@ -27,13 +27,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 >
                     <Theme>
                         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-                            <WalletProvider>
+                            <NftProvider>
                                 <div className="relative flex min-h-screen flex-col">
                                     <SiteHeader />
                                     <div className="flex-1">{children}</div>
                                     <Toaster />
                                 </div>
-                            </WalletProvider>
+                            </NftProvider>
                         </ThemeProvider>
                     </Theme>
 

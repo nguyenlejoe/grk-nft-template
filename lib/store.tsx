@@ -4,9 +4,9 @@ import { createContext, useState } from "react";
 import { COVALENT_API_KEY } from "./utils";
 import { useTheme } from "next-themes";
 
-interface WalletContextType {
-    walletAddress: string
-    setWalletAddress: Function
+interface NftContextType {
+    nftAddress: string
+    setnftAddress: Function
     chains: any
     setChains: Function
     tableState: { [key: string]: boolean }
@@ -18,18 +18,18 @@ interface WalletContextType {
 }
 
 
-export const WalletContext = createContext<WalletContextType>(
-    {} as WalletContextType
+export const NftContext = createContext<NftContextType>(
+    {} as NftContextType
 );
 
-interface WalletProviderProps {
+interface NftProviderProps {
    children: ReactNode
 }
 
 
-export const WalletProvider: React.FC<WalletProviderProps>= ({children}) => {
+export const NftProvider: React.FC<NftProviderProps>= ({children}) => {
     const { theme } = useTheme();
-    const [walletAddress, setWalletAddress] = useState<string>("");
+    const [nftAddress, setnftAddress] = useState<string>("");
     const [chains, setChains] = useState<[]>([]);
     const [tableState, setTableState] = useState({});
     const [color, setColor] = useState<any>("slate");
@@ -39,9 +39,9 @@ export const WalletProvider: React.FC<WalletProviderProps>= ({children}) => {
 
     return (
         <GoldRushProvider apikey={COVALENT_API_KEY ? COVALENT_API_KEY : ""} mode={mode} color={color} border_radius={borderRadius}>
-            <WalletContext.Provider value={{ walletAddress, setWalletAddress, chains, setChains, tableState, setTableState, setColor, color, setBorderRadius, borderRadius}}>
+            <NftContext.Provider value={{ nftAddress, setnftAddress, chains, setChains, tableState, setTableState, setColor, color, setBorderRadius, borderRadius}}>
                 {children}
-            </WalletContext.Provider>
+            </NftContext.Provider>
         </GoldRushProvider>
     );
 };
