@@ -114,7 +114,7 @@ export default function IndexPage() {
                             </PopoverContent>
                         </Popover>
                         <Label htmlFor="contract_address">Contract Address</Label>
-                        <Input type="input" id="address" placeholder="Contract Address" value={address} onChange={(e) => {
+                        <Input className="w-[400px]" type="input" id="address" placeholder="Contract Address" value={address} onChange={(e) => {
                             setAddress(e.target.value)
                         }} />
                         <div>

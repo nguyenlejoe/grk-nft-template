@@ -10,5 +10,6 @@ export const siteConfig = {
   links: {
     github: "https://github.com/covalenthq/goldrush-wallet-portfolio-ui",
     docs: "https://ui.shadcn.com",
+    settings: "/settings"
   },
 }

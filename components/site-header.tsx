@@ -28,6 +28,19 @@ export function SiteHeader() {
                 <span className="sr-only">GitHub</span>
               </div>
             </Link>
+            <Link
+              href={siteConfig.links.settings}
+            >
+              <div
+                className={buttonVariants({
+                  size: "icon",
+                  variant: "ghost",
+                })}
+              >
+                <Icons.Settings className="h-5 w-5" />
+                <span className="sr-only">Settings</span>
+              </div>
+            </Link>
             <ThemeToggle />
           </nav>
         </div>
